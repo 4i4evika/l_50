@@ -1,0 +1,9 @@
+{% extends 'story/base.html' %}
+
+{% block content %}
+<div class="detail">
+    <h1>{{ story.title }}</h1>
+    <h2>-- {{ story.date | date:'d.m.Y' }}--</h2>
+    {{ story.description | safe }}
+</div>
+{% endblock %}

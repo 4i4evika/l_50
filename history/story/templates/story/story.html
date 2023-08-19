@@ -1,0 +1,18 @@
+{% extends 'story/base.html' %}
+
+{% block content %}
+<h1>История Москвы</h1>
+{% for i in story %}
+<div class="element">
+    <h2 class="top">
+        <a href="{% url 'story:detail' i.id %}">
+            {{ i.title }}
+        </a>
+    </h2>
+    <div class="story_text">
+        <h4>{{ i.date | date:'j E Y' }}</h4>
+        <p>{{ i.description | striptags | truncatechars:380 }}</p>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
